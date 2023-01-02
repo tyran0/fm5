@@ -2,7 +2,7 @@
   "name": "crowdfunding-product-page",
   "version": "0.0.1",
   "scripts": {
-    "sass": "sass --no-souce-map src/sass:dist/css",
+    "sass": "sass --no-source-map src/sass:dist/css",
     "sass:watch": "npm run sass -- -w",
     "sass:build": "npm run sass -- -s compressed",
     "serve": "http-server ./dist -a localhost",
