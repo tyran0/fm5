@@ -1,0 +1,17 @@
+{
+  "name": "crowdfunding-product-page",
+  "version": "0.0.1",
+  "scripts": {
+    "sass": "sass --no-souce-map src/sass:dist/css",
+    "sass:watch": "npm run sass -- -w",
+    "sass:build": "npm run sass -- -s compressed",
+    "serve": "http-server ./dist -a localhost",
+    "dev": "npm run sass:watch & npm run serve -- -p 5500",
+    "start": "npm run sass:build & npm run serve"
+  },
+  "author": "tyran0",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "sass": "^1.57.1"
+  }
+}
