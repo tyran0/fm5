@@ -1,13 +1,22 @@
 .button {
+    --padding-x: 2em;
+    --padding-y: 1.25em;
+    
     display: block;
+    font-size: 16px;
     cursor: pointer;
-    border-radius: 2rem;
-    padding: 1.25rem 2rem;
+    border-radius: var(--padding-x);
+    padding: var(--padding-y) var(--padding-x);
 }
 
 .button_icon {
-    order: -1;
-    margin-right: calc(var(--padding) / 2);
+    width: auto;
+    height: 100%;
+    display: block;
+}
+
+.button_label {
+    order: 1;
 }
 
 .button-disabled {
@@ -17,22 +26,4 @@
 .button-hasIcon {
     padding: 0;
     background-color: transparent;
-}
-
-@media only screen and (max-width: 767.98px) {
-    .button-hasIcon .button_label {
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .button-hasIcon.button-hasLabel {
-       --padding: 2rem;
-        display: flex;
-        align-items: center;
-        padding-right: var(--padding);
-        background-color: buttonface;
-    }
-
-
 }

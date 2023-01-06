@@ -1,0 +1,20 @@
+$col-primary_cyan-300: hsl(176, 72%, 28%);
+$col-primary_cyan-500: hsl(176, 50%, 47%);
+$col-neutral_gray-950: hsl(0, 0%, 95%);
+$col-neutral_gray-800: hsl(0, 0%, 80%);
+$col-neutral_gray-500: hsl(0, 0%, 48%);
+$col-neutral_black-000: hsl(0, 0%, 0%);
+
+@mixin visuallyHidden() {
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+}
+
+.visuallyHidden {
+    @include visuallyHidden();
+}

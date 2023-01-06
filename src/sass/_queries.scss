@@ -1,0 +1,43 @@
+@use 'constants' as c;
+
+@media only screen and (max-width: 424.98px) {
+    .pledge,
+    .container {
+        padding: 1rem;
+    }
+    
+    .description_footer :nth-child(1) {
+        flex: 1;
+    }
+
+    .button-hasIcon .button_label {
+        margin: 0;
+        @include c.visuallyHidden();
+    }
+}
+
+@media only screen and (min-width: 425px) {
+    :root {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 2rem;
+    }
+
+    .pledge {
+        padding: 1.25rem;
+    }
+
+    .description_footer {
+        justify-content: space-between;
+    }
+    
+    .button-hasIcon.button-hasLabel {
+        display: flex;
+        align-items: center;
+        background-color: buttonface;
+        gap: calc(var(--padding-x) / 2);
+        padding-right: var(--padding-x);
+    }
+}
