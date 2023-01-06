@@ -1,0 +1,38 @@
+.button {
+    display: block;
+    cursor: pointer;
+    border-radius: 2rem;
+    padding: 1.25rem 2rem;
+}
+
+.button_icon {
+    order: -1;
+    margin-right: calc(var(--padding) / 2);
+}
+
+.button-disabled {
+    cursor: default;
+}
+
+.button-hasIcon {
+    padding: 0;
+    background-color: transparent;
+}
+
+@media only screen and (max-width: 767.98px) {
+    .button-hasIcon .button_label {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .button-hasIcon.button-hasLabel {
+       --padding: 2rem;
+        display: flex;
+        align-items: center;
+        padding-right: var(--padding);
+        background-color: buttonface;
+    }
+
+
+}

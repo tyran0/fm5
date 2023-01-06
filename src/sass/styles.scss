@@ -1,0 +1,23 @@
+@use 'partials' as p;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.page {
+    margin: 0 1.25rem;
+}
+
+.project > * + * {
+    margin-top: 1.25rem;    
+}
+
+.project_container {
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    /* Temporary */
+    border: 1px solid red;
+}
