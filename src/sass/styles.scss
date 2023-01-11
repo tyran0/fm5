@@ -2,11 +2,68 @@
 @use 'partials' as p;
 @use 'queries';
 
+// Layout
+
 * {
     margin: 0;
     padding: 0;
-    border: none;
 }
+
+html {
+    font-family: 'Commissioner',
+        sans-serif;
+}
+
+.main,
+.modal {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 c.$layoutGap;
+}
+
+.header {
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.header_inner {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_logo {
+    width: auto;
+    display: block;
+}
+
+.header_navigation {
+    gap: 2.5em;
+    float: right;
+    list-style-type: none;
+    color: c.$col-neutral_white;
+}
+
+.main,
+.modal {
+    max-width: c.$maxWidth;
+    box-sizing: border-box;
+}
+
+.project {
+    display: grid;
+    gap: c.$layoutGap;    
+}
+
+.description_footer {
+    gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// Styling
 
 .page {
     background-size: 100%;
@@ -21,7 +78,7 @@
     height: 192px;
     position: absolute;
     background: linear-gradient(
-        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.66),
         transparent
     );
 }
@@ -32,38 +89,8 @@
     display: block;
 }
 
-// Layout
-
-.main,
-.header,
-.modal {
-    margin: auto;
-    padding: 0 1.25rem;
-}
-
-.header {
-    position: fixed;
-    top: 0;
-}
-
-.main,
-.modal {
-    max-width: 800px;
-}
-
-.main {
-    margin-top: -3rem;
-}
-
 .modal {
     background-color: transparent;
-}
-
-// Project
-
-.project {
-    gap: 1.25rem;    
-    display: grid;
 }
 
 .pledge,
@@ -76,11 +103,10 @@
 }
 
 .container {
-    background-color: white;
+    background-color: c.$col-neutral_white;
 }
 
-.description_footer {
-    gap: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
+.link {
+    color: inherit;
+    text-decoration: none;
 }

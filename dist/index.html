@@ -5,26 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <title>Frontend Mentor | Crowdfunding product page</title>
+    <title>Frontend Mentor | Crowdfund</title>
 </head>
 <body class="page">
     <h1 class="visuallyHidden">Crowdfunding product page</h1>
     <div class="topShadow"></div>
     <picture class="backdrop">
         <source srcset="./assets/images/image-hero-mobile.jpg"
-                media="(max-width: 424.98px)">
+                media="(max-width: 767.98px)">
         <img class="backdrop_image" alt=""
              src="./assets/images/image-hero-desktop.jpg">
     </picture>
     <div class="page_layout">
         <header class="header">
-            <nav>
+            <nav class="header_inner">
                 <h2 class="visuallyHidden">Main Navigation</h2>
+                <a class="link" href="/">
+                    <img class="header_logo" alt=""
+                         src="./assets/images/logo.svg">
+                </a>
                 <ul class="header_navigation">
-                    <li class="navigation_item">About</li>
-                    <li class="navigation_item">Discover</li>
-                    <li class="navigation_item">Get Started</li>
+                    <li class="navigation_item">
+                        <a class="link" href="/">About</a>
+                    </li>
+                    <li class="navigation_item">
+                        <a class="link" href="/">Discover</a>
+                    </li>
+                    <li class="navigation_item">
+                        <a class="link" href="/">Get Started</a>
+                    </li>
                 </ul>
+                <button class="button button-hasIcon">
+                    <img class="button_icon" alt=""
+                         src="./assets/images/icon-hamburger.svg">
+                </button>
             </nav>
         </header>
         <main class="main">
@@ -39,7 +53,7 @@
                             A beautiful & handcrafted monitor stand to reduce neck and eye strain.
                         </p>
                         <footer class="copy_footer description_footer">
-                            <button class="button">Back this project</button>
+                            <button class="button button-accent">Back this project</button>
                             <button class="button button-hasIcon button-hasLabel">
                                 <span class="button_label">Bookmark</span>
                                 <img class="button_icon" alt=""

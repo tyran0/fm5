@@ -17,10 +17,6 @@
 }
 
 @media only screen and (min-width: 425px) {
-    :root {
-        font-size: 20px;
-    }
-
     .container {
         padding: 2rem;
     }
@@ -39,5 +35,47 @@
         background-color: buttonface;
         gap: calc(var(--padding-x) / 2);
         padding-right: var(--padding-x);
+    }
+}
+
+@media only screen and (max-width: 559.98px) {
+    .header_inner {
+        padding: 1.5rem c.$layoutGap;
+    }
+
+    .header_logo {
+        height: 20px;
+    }
+
+    .header_navigation {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 560px) {
+    .header_inner {
+        padding: 4rem c.$layoutGap;
+        & .button { display: none; }
+        max-width: calc(c.$maxWidth * 1.5);
+    }
+
+    .header_logo {
+        height: 28px;
+    }
+
+    .header_navigation {
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .main {
+        margin-top: -3.5rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .main {
+        margin-top: -7rem;
     }
 }

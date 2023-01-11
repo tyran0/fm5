@@ -1,7 +1,10 @@
+@use '../constants' as c;
+
 .button {
     --padding-x: 2em;
     --padding-y: 1.25em;
     
+    border: none;
     display: block;
     font-size: 16px;
     cursor: pointer;
@@ -17,6 +20,11 @@
 
 .button_label {
     order: 1;
+}
+
+.button-accent {
+    color: c.$col-neutral_white;
+    background-color: c.$col-primary_cyan-500;
 }
 
 .button-disabled {
