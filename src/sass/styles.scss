@@ -57,6 +57,20 @@ html {
     gap: c.$layoutGap;    
 }
 
+.project_vendor {
+    margin-bottom: 1.5rem;
+    height: calc(var(--vendorPinHeight, 56px) / 2);
+    margin-top: calc(var(--containerPadding) * -1);
+}
+
+.vendor_logo {
+    left: 50%;
+    width: auto;
+    position: absolute;
+    height: var(--vendorPinHeight);
+    transform: translate(-50%, -50%);
+}
+
 .description_footer {
     gap: 0.5rem;
     display: flex;
@@ -96,6 +110,7 @@ html {
 .pledge,
 .container {
     border-radius: 0.5rem;
+    padding: var(--containerPadding);
 }
 
 .pledge {
