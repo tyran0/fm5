@@ -3,7 +3,8 @@
 @media only screen and (max-width: 424.98px) {
     .pledge,
     .container {
-        --containerPadding: 1rem;
+        --containerPaddingX: 1rem;
+        --containerPaddingY: 1rem;
     }
     
     .description_footer :nth-child(1) {
@@ -17,12 +18,14 @@
 }
 
 @media only screen and (min-width: 425px) {
-    .pledge {
-        padding: 1.25rem;
+    .container {
+        --containerPaddingX: 2rem;
+        --containerPaddingY: 2.5rem;
     }
 
-    .container {
-        --containerPadding: 2rem;
+    .pledge {
+        --containerPaddingX: 1.75rem;
+        --containerPaddingY: 1.75rem;
     }
 
     .project_vendor {

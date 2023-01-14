@@ -2,7 +2,7 @@
 @use 'partials' as p;
 @use 'queries';
 
-// Layout
+// Defaults
 
 * {
     margin: 0;
@@ -14,12 +14,12 @@ html {
         sans-serif;
 }
 
-.main,
-.modal {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 c.$layoutGap;
+.link {
+    color: inherit;
+    text-decoration: none;
 }
+
+// Header
 
 .header {
     top: 0;
@@ -46,11 +46,23 @@ html {
     color: c.$col-neutral_white;
 }
 
+// Main & Modal
+
+.modal {
+    background-color: transparent;
+}
+
 .main,
 .modal {
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
     max-width: c.$maxWidth;
     box-sizing: border-box;
+    padding: 0 c.$layoutGap;
 }
+
+// Project
 
 .project {
     display: grid;
@@ -60,7 +72,7 @@ html {
 .project_vendor {
     margin-bottom: 1.5rem;
     height: calc(var(--vendorPinHeight, 56px) / 2);
-    margin-top: calc(var(--containerPadding) * -1);
+    margin-top: calc(var(--containerPaddingY) * -1);
 }
 
 .vendor_logo {
@@ -71,19 +83,103 @@ html {
     transform: translate(-50%, -50%);
 }
 
-.description_footer {
-    gap: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-// Styling
-
 .page {
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: c.$col-neutral_gray-950;
 }
+
+// Project Progress
+
+.project_progress {
+    --progressBarHeight: 0.75rem;
+    --progressBarColor: #{c.$col-neutral_gray-950};
+    --progressValueColor: #{c.$col-primary_cyan-500};
+    --progressBarRadius: calc(var(--progressBarHeight) / 2);
+    
+    width: 100%;
+    -webkit-appearance: none;
+    height: var(--progressBarHeight);
+}
+
+.project_progress::-webkit-progress-bar {
+    border-radius: var(--progressBarRadius);
+    background-color: var(--progressBarColor);
+}
+
+.project_progress::-webkit-progress-value {
+    border-radius: var(--progressBarRadius);
+    background-color: var(--progressValueColor);
+}
+
+.project_progress::-moz-progress-bar {
+    border-radius: var(--progressBarRadius);
+    background-color: var(--progressValueColor);
+}
+
+// Pledge & Container
+
+.pledge,
+.container {
+    border-radius: 0.5rem;
+    padding: var(--containerPaddingX)
+             var(--containerPaddingY);
+}
+
+.pledge {
+    border: 1px solid c.$col-neutral_gray-850;
+}
+
+.container {
+    background-color: c.$col-neutral_white;
+}
+
+.container-alignCenter {
+    display: grid;
+    justify-items: center;
+}
+
+// Pledge Form Confirm
+
+.pledgeForm_confirm {
+    border: none;
+}
+
+// Pledge Form Input
+
+.pledgeForm_input,
+.pledgeForm_input .checkmark {
+    border-radius: 50%;
+}
+
+.pledgeForm_input {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid c.$col-neutral_gray-700;
+}
+
+.pledgeForm_input .checkmark {
+    display: none;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    background-color: c.$col-primary_cyan-500;
+}
+
+.pledgeForm_input input[type='radio'] {
+    @include c.visuallyHidden();
+    width: 100%;
+    height: 100%;
+}
+
+.pledgeForm_input input[type='radio']:checked + .checkmark {
+    display: inline-block;
+}
+
+// Decoration
 
 .topShadow {
     top: 0;
@@ -101,27 +197,4 @@ html {
     width: 100%;
     height: auto;
     display: block;
-}
-
-.modal {
-    background-color: transparent;
-}
-
-.pledge,
-.container {
-    border-radius: 0.5rem;
-    padding: var(--containerPadding);
-}
-
-.pledge {
-    border: 1px solid c.$col-neutral_gray-800;
-}
-
-.container {
-    background-color: c.$col-neutral_white;
-}
-
-.link {
-    color: inherit;
-    text-decoration: none;
 }

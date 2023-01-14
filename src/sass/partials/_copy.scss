@@ -1,1 +1,11 @@
 @use '../constants' as c;
+
+.copy-alignCenter {
+    text-align: center;
+}
+
+.copy_footer {
+    gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
