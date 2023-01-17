@@ -1,14 +1,13 @@
 @use 'constants' as c;
 
 @media only screen and (max-width: 424.98px) {
-    .pledge,
-    .container {
-        --containerPaddingX: 1rem;
-        --containerPaddingY: 1rem;
-    }
-    
     .description_footer :nth-child(1) {
         flex: 1;
+    }
+
+    .container {
+        --containerPaddingX: 1.25rem;
+        --containerPaddingY: 1.25rem;
     }
 
     .button-hasIcon .button_label {
@@ -18,24 +17,19 @@
 }
 
 @media only screen and (min-width: 425px) {
-    .container {
-        --containerPaddingX: 2rem;
-        --containerPaddingY: 2.5rem;
-    }
-
-    .pledge {
-        --containerPaddingX: 1.75rem;
-        --containerPaddingY: 1.75rem;
+    .description_footer {
+        justify-content: space-between;
     }
 
     .project_vendor {
         --vendorPinHeight: 72px;
     }
 
-    .description_footer {
-        justify-content: space-between;
+    .container {
+        --containerPaddingX: 2rem;
+        --containerPaddingY: 2.5rem;
     }
-    
+
     .button-hasIcon.button-hasLabel {
         display: flex;
         align-items: center;
@@ -57,6 +51,16 @@
     .header_navigation {
         display: none;
     }
+
+    .pledge_rewards {
+        grid-column: 1 / 4;
+    }
+
+    .pledge_row {
+        align-items: start;
+        flex-direction: column;
+    }
+
 }
 
 @media only screen and (min-width: 560px) {
@@ -72,6 +76,24 @@
 
     .header_navigation {
         display: flex;
+    }
+
+    .stats {
+        grid-auto-flow: column;
+    }
+
+    .pledge_body {
+        grid-column: 2 / 4;
+    }
+
+    .pledge_row {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .pledge_rewards {
+        grid-row: 1;
+        grid-column: 3 / 4;
     }
 }
 

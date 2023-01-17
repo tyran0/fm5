@@ -1,11 +1,53 @@
 @use '../constants' as c;
 
+.copy {
+    row-gap: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
 .copy-alignCenter {
     text-align: center;
 }
 
+.copy_display {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.copy_heading {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.copy_heading-primary {
+    font-size: 1.5rem;
+}
+
+.copy_heading-secondary {
+    font-size: 1.25rem;
+}
+
+.copy_caption {
+    font-weight: 500;
+    color: c.$col-primary_cyan-500;
+}
+
+.copy_paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.copy_header {
+    gap: 0.25rem;
+    align-items: center;
+}
+
 .copy_footer {
-    gap: 0.5rem;
     display: flex;
-    flex-wrap: wrap;
+    row-gap: 1.5rem;
+    column-gap: 0.5rem;
+    align-items: center;
 }

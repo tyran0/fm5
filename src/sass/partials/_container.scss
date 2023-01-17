@@ -1,0 +1,62 @@
+@use '../constants' as c;
+
+.container {
+    padding: var(--containerPaddingX)
+             var(--containerPaddingY);
+}
+
+.container {
+    border-radius: 0.5rem;
+    background-color: c.$col-neutral_white;
+}
+
+.container-alignCenter {
+    display: grid;
+    justify-items: center;
+}
+
+.pledge {
+    border-radius: 0.5rem;
+    border: 1px solid c.$col-neutral_gray-850;
+}
+
+.pledge-active {
+    border-width: 2px;
+    border-color: c.$col-primary_cyan-500;
+}
+
+.pledge[data-state='off'] {
+    opacity: 0.3;
+}
+
+.pledge .separator {
+    display: none;
+}
+
+.pledge_container {
+    display: block;
+}
+
+.pledge_layout {
+    display: grid;
+    column-gap: 1.5rem;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+}
+
+.pledge_header {
+    column-gap: 1.5rem;
+}
+
+.pledge_row {
+    display: flex;
+    grid-column: 2 / 3;
+}
+
+.pledge_row-fill {
+    justify-content: space-between;
+}
+
+.pledge_body {
+    grid-column: 1 / 4;
+}

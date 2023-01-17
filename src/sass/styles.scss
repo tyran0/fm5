@@ -19,6 +19,11 @@ html {
     text-decoration: none;
 }
 
+.separator {
+    border-style: solid;
+    border-color: c.$col-neutral_gray-850;
+}
+
 // Header
 
 .header {
@@ -89,6 +94,21 @@ html {
     background-color: c.$col-neutral_gray-950;
 }
 
+// Project Stats
+
+.project_stats {
+    display: grid;
+    row-gap: var(--containerPaddingY);
+}
+
+.stats {
+    display: grid;
+    row-gap: 1rem;
+    margin: 0 auto;
+    column-gap: 4rem;
+    width: fit-content;
+}
+
 // Project Progress
 
 .project_progress {
@@ -115,68 +135,6 @@ html {
 .project_progress::-moz-progress-bar {
     border-radius: var(--progressBarRadius);
     background-color: var(--progressValueColor);
-}
-
-// Pledge & Container
-
-.pledge,
-.container {
-    border-radius: 0.5rem;
-    padding: var(--containerPaddingX)
-             var(--containerPaddingY);
-}
-
-.pledge {
-    border: 1px solid c.$col-neutral_gray-850;
-}
-
-.container {
-    background-color: c.$col-neutral_white;
-}
-
-.container-alignCenter {
-    display: grid;
-    justify-items: center;
-}
-
-// Pledge Form Confirm
-
-.pledgeForm_confirm {
-    border: none;
-}
-
-// Pledge Form Input
-
-.pledgeForm_input,
-.pledgeForm_input .checkmark {
-    border-radius: 50%;
-}
-
-.pledgeForm_input {
-    display: flex;
-    width: 1.5rem;
-    height: 1.5rem;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid c.$col-neutral_gray-700;
-}
-
-.pledgeForm_input .checkmark {
-    display: none;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    background-color: c.$col-primary_cyan-500;
-}
-
-.pledgeForm_input input[type='radio'] {
-    @include c.visuallyHidden();
-    width: 100%;
-    height: 100%;
-}
-
-.pledgeForm_input input[type='radio']:checked + .checkmark {
-    display: inline-block;
 }
 
 // Decoration
