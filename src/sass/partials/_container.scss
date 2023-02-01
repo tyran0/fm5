@@ -25,6 +25,11 @@
     border-color: c.$col-primary_cyan-500;
 }
 
+.pledge[data-state='on'],
+.pledge[data-state='on'] > * > .pledge_layout {
+    cursor: pointer;
+}
+
 .pledge[data-state='off'] {
     opacity: 0.3;
 }
@@ -39,13 +44,13 @@
 
 .pledge_layout {
     display: grid;
-    column-gap: 1.5rem;
+    column-gap: c.$columnGap;
     align-items: center;
     grid-template-columns: auto 1fr auto;
 }
 
 .pledge_header {
-    column-gap: 1.5rem;
+    column-gap: c.$columnGap;
 }
 
 .pledge_row {

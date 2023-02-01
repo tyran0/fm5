@@ -1,8 +1,8 @@
 @use '../constants' as c;
 
 .copy {
-    row-gap: 2rem;
     display: flex;
+    row-gap: c.$rowGap;
     flex-direction: column;
 }
 
@@ -47,7 +47,7 @@
 
 .copy_footer {
     display: flex;
-    row-gap: 1.5rem;
-    column-gap: 0.5rem;
     align-items: center;
+    row-gap: calc(c.$rowGap - 0.5rem);
+    column-gap: calc(c.$columnGap - 1rem);
 }

@@ -103,10 +103,10 @@ html {
 
 .stats {
     display: grid;
-    row-gap: 1rem;
     margin: 0 auto;
-    column-gap: 4rem;
     width: fit-content;
+    row-gap: calc(c.$rowGap - 1rem);
+    column-gap: calc(c.$columnGap * 2.66);
 }
 
 // Project Progress
