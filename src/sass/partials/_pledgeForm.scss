@@ -5,6 +5,10 @@
     row-gap: c.$rowGap;
 }
 
+.pledgeForm_item {
+    user-select: none;
+}
+
 .pledgeForm_input,
 .pledgeForm_input .checkmark {
     border-radius: 50%;

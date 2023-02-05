@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <title>Frontend Mentor | Crowdfund</title>
+    <script type="module" src="./js/index.js" defer></script>
 </head>
 <body class="page">
     <h1 class="visuallyHidden">Crowdfunding product page</h1>
@@ -42,9 +43,9 @@
             </nav>
         </header>
         <main class="main">
-            <article class="project">
+            <article class="project" id="project">
                 <h2 class="visuallyHidden">Project</h2>
-                <section class="container">
+                <section class="container" id="projectInfo">
                     <div class="project_vendor">
                         <a class="link" href="/">
                             <img class="vendor_logo" alt="View all Mastercraft projects"
@@ -59,8 +60,12 @@
                             A beautiful & handcrafted monitor stand to reduce neck and eye strain.
                         </p>
                         <footer class="copy_footer description_footer">
-                            <button class="button button-accent">Back this project</button>
-                            <button class="button button-hasIcon button-hasLabel">
+                            <button class="button button-accent"
+                                    data-action="selectReward">
+                                Back this project
+                            </button>
+                            <button class="button button-hasIcon button-hasLabel"
+                                    data-action="bookmark">
                                 <span class="button_label">Bookmark</span>
                                 <img class="button_icon" alt=""
                                      src="./assets/images/icon-bookmark.svg">
@@ -68,7 +73,7 @@
                         </footer>
                     </div>
                 </section>
-                <section class="container project_stats">
+                <section class="container" id="projectStats">
                     <h3 class="visuallyHidden">Statistics</h3>
                         <div class="stats">
                             <div class="copy copy-alignCenter">
@@ -97,7 +102,7 @@
                     <progress class="project_progress"
                               value="50" max="100"></progress>
                 </section>
-                <section class="container">
+                <section class="container" id="projectDesc">
                     <div class="copy">
                         <h3 class="copy_heading copy_heading-primary">About this project</h3>
                         <p class="copy_paragraph">
@@ -128,7 +133,8 @@
                                             <span class="copy_display">101</span>
                                             <span class="copy_paragraph"> left</span>
                                         </div>
-                                        <button class="button button-accent">
+                                        <button class="button button-accent"
+                                                data-action="selectReward">
                                             Select Reward
                                         </button>
                                     </footer>
@@ -155,7 +161,8 @@
                                             <span class="copy_display">64</span>
                                             <span class="copy_paragraph"> left</span>
                                         </div>
-                                        <button class="button button-accent">
+                                        <button class="button button-accent"
+                                                data-action="selectReward">
                                             Select Reward
                                         </button>
                                     </footer>
@@ -182,7 +189,8 @@
                                             <span class="copy_display">0</span>
                                             <span class="copy_paragraph"> left</span>
                                         </div>
-                                        <button class="button button-disabled" disabled>
+                                        <button class="button button-disabled"
+                                                data-action="selectReward" disabled>
                                             Out of Stock
                                         </button>
                                     </footer>
@@ -193,181 +201,181 @@
                 </section>
             </article> 
         </main>
-            <dialog class="modal" open>
-                <article class="container">
-                    <div class="copy">
-                        <h2 class="copy_heading copy_heading-primary">
-                            Back this project
-                        </h2>
-                        <p class="copy_paragraph">
-                            Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
-                        </p>
-                        <form class="pledgeForm" id="pledgeForm" action="#">
-                            <article class="pledgeForm_item pledge" data-state="on">
-                                <span class="container pledge_container">
-                                    <label class="copy pledge_layout">
-                                        <span class="pledgeForm_input">
-                                            <input class="input" type="radio" name="pledge">
-                                            <span class="checkmark"></span>
-                                        </span>
-                                        <span class="copy_header pledge_header pledge_row">
-                                            <span class="copy_heading copy_heading-secondary">
-                                                <span class="visuallyHidden">Select </span>Pledge with no reward
-                                            </span>
-                                        </span>
-                                        <span class="copy_paragraph pledge_body">
-                                            Choose to support us without a reward if you simply believe in our project. As a backer, 
-                                            you will be signed up to receive product updates via email.
-                                        </span>
-                                    </label>
+    </div>
+    <dialog class="modal" id="rewardSelectionModal">
+        <article class="container">
+            <div class="copy">
+                <h2 class="copy_heading copy_heading-primary">
+                    Back this project
+                </h2>
+                <p class="copy_paragraph">
+                    Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+                </p>
+                <form class="pledgeForm" action="#">
+                    <article class="pledgeForm_item pledge" data-state="on">
+                        <span class="container pledge_container">
+                            <label class="copy pledge_layout">
+                                <span class="pledgeForm_input">
+                                    <input class="input" type="radio" name="pledge">
+                                    <span class="checkmark"></span>
                                 </span>
-                                <hr class="separator">
-                                <fieldset class="pledgeForm_confirm container"
-                                          disabled hidden>
-                                    <button class="button button-accent"
-                                            type="submit">
-                                        Continue
-                                    </button>
-                                </fieldset>
-                            </article>
-                            <article class="pledgeForm_item pledge" data-state="on">
-                                <span class="container pledge_container">
-                                    <label class="copy pledge_layout">
-                                        <span class="pledgeForm_input">
-                                            <input class="input" type="radio" name="pledge">
-                                            <span class="checkmark"></span>
-                                        </span>
-                                        <span class="copy_header pledge_header pledge_row">
-                                            <span class="copy_heading copy_heading-secondary">
-                                                <span class="visuallyHidden">Select </span>Bamboo Stand
-                                            </span>
-                                            <span class="copy_caption">
-                                                Pledge $25 or more
-                                            </span>  
-                                        </span>
-                                        <span class="copy_paragraph pledge_body">
-                                            You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
-                                            you’ll be added to a special Backer member list.
-                                        </span>
-                                        <span class="pledge_rewards">
-                                            <span class="copy_display">101</span>
-                                            <span class="copy_paragraph"> left</span>
-                                        </span>
-                                    </label>
+                                <span class="copy_header pledge_header pledge_row">
+                                    <span class="copy_heading copy_heading-secondary">
+                                        <span class="visuallyHidden">Select </span>Pledge with no reward
+                                    </span>
                                 </span>
-                                <hr class="separator">
-                                <fieldset class="pledgeForm_confirm container"
-                                          disabled hidden>
-                                    <label class="label">
-                                        Enter your pledge
-                                        <input type="number" min="25" value="25"
-                                                name="pledge-amount" required>
-                                    </label>
-                                    <button class="button button-accent"
-                                            type="submit">
-                                        Continue
-                                    </button>
-                                </fieldset>
-                            </article>
-                            <article class="pledgeForm_item pledge" data-state="on">
-                                <span class="container pledge_container">
-                                    <label class="copy pledge_layout">
-                                        <span class="pledgeForm_input">
-                                            <input class="input" type="radio" name="pledge">
-                                            <span class="checkmark"></span>
-                                        </span>
-                                        <span class="copy_header pledge_header pledge_row">
-                                            <span class="copy_heading copy_heading-secondary">
-                                                <span class="visuallyHidden">Select </span>Black Edition Stand
-                                            </span>
-                                            <span class="copy_caption">
-                                                Pledge $75 or more
-                                            </span>
-                                        </span>
-                                        <span class="copy_paragraph pledge_body">
-                                            You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
-                                            member list. Shipping is included.
-                                        </span>
-                                        <span class="pledge_rewards">
-                                            <span class="copy_display">64</span>
-                                            <span class="copy_paragraph"> left</span>
-                                        </span>
-                                    </label>
+                                <span class="copy_paragraph pledge_body">
+                                    Choose to support us without a reward if you simply believe in our project. As a backer, 
+                                    you will be signed up to receive product updates via email.
                                 </span>
-                                <hr class="separator">
-                                <fieldset class="pledgeForm_confirm container"
-                                          disabled hidden>
-                                    <label>
-                                        Enter your pledge
-                                        <input type="number" min="75" value="75"
-                                                name="pledge-amount" required>
-                                    </label>
-                                    <button class="button button-accent"
-                                            type="submit">
-                                        Continue
-                                    </button>
-                                </fieldset>
-                            </article>
-                            <article class="pledgeForm_item pledge" data-state="off">
-                                <span class="container pledge_container">
-                                    <label class="copy pledge_layout">
-                                        <span class="pledgeForm_input">
-                                            <input class="input" type="radio"
-                                                name="pledge" disabled>
-                                            <span class="checkmark"></span>
-                                        </span>
-                                        <span class="copy_header pledge_header pledge_row">
-                                            <span class="copy_heading copy_heading-secondary">
-                                                Mahogany Special Edition<span class="visuallyHidden"> (Out of Stock)</span>
-                                            </span>
-                                            <span class="copy_caption">
-                                                Pledge $200 or more
-                                            </span>
-                                        </span>
-                                        <span class="copy_paragraph pledge_body">
-                                            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
-                                            to our Backer member list. Shipping is included.
-                                        </span>
-                                        <span class="pledge_rewards">
-                                            <span class="copy_display">0</span>
-                                            <span class="copy_paragraph"> left</span>
-                                        </span>
-                                    </label>
+                            </label>
+                        </span>
+                        <hr class="separator">
+                        <fieldset class="pledgeForm_confirm container"
+                                    disabled hidden>
+                            <button class="button button-accent"
+                                    type="submit">
+                                Continue
+                            </button>
+                        </fieldset>
+                    </article>
+                    <article class="pledgeForm_item pledge" data-state="on">
+                        <span class="container pledge_container">
+                            <label class="copy pledge_layout">
+                                <span class="pledgeForm_input">
+                                    <input class="input" type="radio" name="pledge">
+                                    <span class="checkmark"></span>
                                 </span>
-                                <hr class="separator">
-                                <fieldset class="pledgeForm_confirm container"
-                                          disabled hidden>
-                                    <label>
-                                        Enter your pledge
-                                        <input type="number" min="200" value="200"
-                                                name="pledge-amount" required>
-                                    </label>
-                                    <button class="button button-accent"
-                                            type="submit">
-                                        Continue
-                                    </button>
-                                </fieldset>
-                            </article>
-                        </form>
-                    </div>
-                </article>
-            </dialog>
-            <dialog class="modal">
-                <article class="container container-alignCenter">
-                    <img src="./assets/images/icon-check.svg"
-                         class="image" alt="">
-                    <div class="copy copy-alignCenter">
-                        <h2 class="copy_heading copy_heading-primary">Thanks for your support!</h2>
-                        <p class="copy_paragraph">
-                            Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get 
-                            an email once our campaign is completed.
-                        </p>
-                    </div>
-                    <button class="button button-accent">
-                        Got it!
-                    </button>
-                </article>
-            </dialog> 
-        </div>
+                                <span class="copy_header pledge_header pledge_row">
+                                    <span class="copy_heading copy_heading-secondary">
+                                        <span class="visuallyHidden">Select </span>Bamboo Stand
+                                    </span>
+                                    <span class="copy_caption">
+                                        Pledge $25 or more
+                                    </span>  
+                                </span>
+                                <span class="copy_paragraph pledge_body">
+                                    You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
+                                    you’ll be added to a special Backer member list.
+                                </span>
+                                <span class="pledge_rewards">
+                                    <span class="copy_display">101</span>
+                                    <span class="copy_paragraph"> left</span>
+                                </span>
+                            </label>
+                        </span>
+                        <hr class="separator">
+                        <fieldset class="pledgeForm_confirm container"
+                                    disabled hidden>
+                            <label class="label">
+                                Enter your pledge
+                                <input type="number" min="25" value="25"
+                                        name="pledge-amount" required>
+                            </label>
+                            <button class="button button-accent"
+                                    type="submit">
+                                Continue
+                            </button>
+                        </fieldset>
+                    </article>
+                    <article class="pledgeForm_item pledge" data-state="on">
+                        <span class="container pledge_container">
+                            <label class="copy pledge_layout">
+                                <span class="pledgeForm_input">
+                                    <input class="input" type="radio" name="pledge">
+                                    <span class="checkmark"></span>
+                                </span>
+                                <span class="copy_header pledge_header pledge_row">
+                                    <span class="copy_heading copy_heading-secondary">
+                                        <span class="visuallyHidden">Select </span>Black Edition Stand
+                                    </span>
+                                    <span class="copy_caption">
+                                        Pledge $75 or more
+                                    </span>
+                                </span>
+                                <span class="copy_paragraph pledge_body">
+                                    You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
+                                    member list. Shipping is included.
+                                </span>
+                                <span class="pledge_rewards">
+                                    <span class="copy_display">64</span>
+                                    <span class="copy_paragraph"> left</span>
+                                </span>
+                            </label>
+                        </span>
+                        <hr class="separator">
+                        <fieldset class="pledgeForm_confirm container"
+                                    disabled hidden>
+                            <label>
+                                Enter your pledge
+                                <input type="number" min="75" value="75"
+                                        name="pledge-amount" required>
+                            </label>
+                            <button class="button button-accent"
+                                    type="submit">
+                                Continue
+                            </button>
+                        </fieldset>
+                    </article>
+                    <article class="pledgeForm_item pledge" data-state="off">
+                        <span class="container pledge_container">
+                            <label class="copy pledge_layout">
+                                <span class="pledgeForm_input">
+                                    <input class="input" type="radio"
+                                        name="pledge" disabled>
+                                    <span class="checkmark"></span>
+                                </span>
+                                <span class="copy_header pledge_header pledge_row">
+                                    <span class="copy_heading copy_heading-secondary">
+                                        Mahogany Special Edition<span class="visuallyHidden"> (Out of Stock)</span>
+                                    </span>
+                                    <span class="copy_caption">
+                                        Pledge $200 or more
+                                    </span>
+                                </span>
+                                <span class="copy_paragraph pledge_body">
+                                    You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
+                                    to our Backer member list. Shipping is included.
+                                </span>
+                                <span class="pledge_rewards">
+                                    <span class="copy_display">0</span>
+                                    <span class="copy_paragraph"> left</span>
+                                </span>
+                            </label>
+                        </span>
+                        <hr class="separator">
+                        <fieldset class="pledgeForm_confirm container"
+                                    disabled hidden>
+                            <label>
+                                Enter your pledge
+                                <input type="number" min="200" value="200"
+                                        name="pledge-amount" required>
+                            </label>
+                            <button class="button button-accent"
+                                    type="submit">
+                                Continue
+                            </button>
+                        </fieldset>
+                    </article>
+                </form>
+            </div>
+        </article>
+    </dialog>
+    <dialog class="modal">
+        <article class="container container-alignCenter">
+            <img src="./assets/images/icon-check.svg"
+                    class="image" alt="">
+            <div class="copy copy-alignCenter">
+                <h2 class="copy_heading copy_heading-primary">Thanks for your support!</h2>
+                <p class="copy_paragraph">
+                    Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get 
+                    an email once our campaign is completed.
+                </p>
+            </div>
+            <button class="button button-accent">
+                Got it!
+            </button>
+        </article>
+    </dialog> 
 </body>
 </html>

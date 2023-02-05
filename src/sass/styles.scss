@@ -53,18 +53,31 @@ html {
 
 // Main & Modal
 
-.modal {
-    background-color: transparent;
-}
-
 .main,
 .modal {
     border: none;
     margin-left: auto;
     margin-right: auto;
     max-width: c.$maxWidth;
+    max-height: 100%;
     box-sizing: border-box;
     padding: 0 c.$layoutGap;
+}
+
+.modal {
+    background-color: transparent;
+}
+
+.modal[open] {
+    padding: 0;
+
+    &::backdrop {
+        background: rgb(0, 0, 0, 0.4);
+    }
+
+    & > .container {
+        border-radius: 0%;
+    }
 }
 
 // Project
