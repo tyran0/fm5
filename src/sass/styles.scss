@@ -120,6 +120,7 @@ html {
     width: fit-content;
     row-gap: calc(c.$rowGap - 1rem);
     column-gap: calc(c.$columnGap * 2.66);
+    padding-bottom: 1rem;
 }
 
 // Project Progress
