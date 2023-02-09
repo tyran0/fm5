@@ -8,6 +8,7 @@
 
 .copy-alignCenter {
     text-align: center;
+    align-items: center;
 }
 
 .copy_display {
@@ -50,4 +51,8 @@
     align-items: center;
     row-gap: calc(c.$rowGap - 0.5rem);
     column-gap: calc(c.$columnGap - 1rem);
+}
+
+.description_footer {
+    width: 100%;
 }

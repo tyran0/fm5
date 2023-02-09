@@ -6,6 +6,7 @@
 }
 
 .container {
+    row-gap: c.$rowGap;
     border-radius: 0.5rem;
     background-color: c.$col-neutral_white;
 }

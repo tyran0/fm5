@@ -41,7 +41,36 @@
     display: inline-block;
 }
 
+.pledgeForm_confirm:not([disabled]) {
+    display: grid;
+}
+
 .pledgeForm_confirm {
-    padding-top: 0;
     border: none;
+    border-top: inherit;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    row-gap: 1rem;
+}
+
+.pledgeForm_confirm div {
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.pledgeForm_confirm input {
+    width: 100%;
+    max-width: 5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    border-radius: 2.5em;
+}
+
+.pledgeForm_confirm input::before {
+    content: '$';
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-color: red;
 }
