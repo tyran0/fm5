@@ -33,17 +33,12 @@
     .button-hasIcon.button-hasLabel {
         display: flex;
         align-items: center;
-        background-color: buttonface;
         gap: calc(var(--padding-x) / 2);
         padding-right: var(--padding-x);
     }
 }
 
 @media only screen and (max-width: 559.98px) {
-    .header_inner {
-        padding: 1.5rem c.$layoutGap;
-    }
-
     .header_logo {
         height: 20px;
     }
@@ -64,12 +59,6 @@
 }
 
 @media only screen and (min-width: 560px) {
-    .header_inner {
-        padding: 4rem c.$layoutGap;
-        & .button { display: none; }
-        max-width: calc(c.$maxWidth * 1.5);
-    }
-
     .header_logo {
         height: 28px;
     }
@@ -98,13 +87,46 @@
 }
 
 @media only screen and (max-width: 767.98px) {
+    .header_inner {
+        padding: 2rem c.$layoutGap;
+    }
+
     .main {
         margin-top: -3.5rem;
     }
 }
 
 @media only screen and (min-width: 768px) {
+    .header_inner {
+        padding: 5rem c.$layoutGap;
+        & .button { display: none; }
+    }
+
+    .backdrop_image {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+
     .main {
         margin-top: -7rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1024.1px) {
+    .header_inner {
+        max-width: c.$maxWidth;
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (min-width: 1024.1px) {
+    .backdrop_image {
+        height: 100%;
+        min-height: 50vh;
+    }
+
+    .header_inner {
+        max-width: calc(100% / 1.25);
     }
 }

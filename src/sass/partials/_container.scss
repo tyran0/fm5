@@ -25,7 +25,6 @@
     border-color: c.$col-primary_cyan-500;
 }
 
-.pledge[data-state='on'],
 .pledge[data-state='on'] > * > .pledge_layout {
     cursor: pointer;
 }
