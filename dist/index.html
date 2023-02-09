@@ -13,7 +13,7 @@
     <div class="topShadow"></div>
     <picture class="backdrop">
         <source srcset="./assets/images/image-hero-mobile.jpg"
-                media="(max-width: 767.98px)">
+                media="(max-width: 1023.98px)">
         <img class="backdrop_image" alt=""
              src="./assets/images/image-hero-desktop.jpg">
     </picture>
@@ -67,8 +67,12 @@
                             <button class="button button-hasIcon button-hasLabel"
                                     data-action="bookmark">
                                 <span class="button_label">Bookmark</span>
-                                <img class="button_icon" alt=""
-                                     src="./assets/images/icon-bookmark.svg">
+                                <svg class="button_icon" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="bookmarkIcon" fill="none" fill-rule="evenodd">
+                                        <circle fill="#2F2F2F" cx="28" cy="28" r="28"/>
+                                        <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/>
+                                    </g>
+                                </svg>
                             </button>
                         </footer>
                     </div>
@@ -213,7 +217,7 @@
                 <p class="copy_paragraph">
                     Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
                 </p>
-                <form class="pledgeForm" action="#">
+                <form class="pledgeForm" id="pledgeForm" action="#">
                     <article class="pledgeForm_item pledge" data-state="on">
                         <span class="container pledge_container">
                             <label class="copy pledge_layout">
@@ -236,7 +240,7 @@
                         <fieldset class="pledgeForm_confirm container"
                                     disabled hidden>
                             <button class="button button-accent"
-                                    type="submit">
+                                    type="submit" data-action="submit_pledge">
                                 Continue
                             </button>
                         </fieldset>
@@ -253,7 +257,7 @@
                                         <span class="visuallyHidden">Select </span>Bamboo Stand
                                     </span>
                                     <span class="copy_caption">
-                                        Pledge $25 or more
+                                        Pledge $<span data-value="pledge_sum">25</span> or more
                                     </span>  
                                 </span>
                                 <span class="copy_paragraph pledge_body">
@@ -261,7 +265,8 @@
                                     you’ll be added to a special Backer member list.
                                 </span>
                                 <span class="pledge_rewards">
-                                    <span class="copy_display">101</span>
+                                    <span class="copy_display"
+                                          data-value="rewards_left">101</span>
                                     <span class="copy_paragraph"> left</span>
                                 </span>
                             </label>
@@ -269,11 +274,11 @@
                         <hr class="separator">
                         <fieldset class="pledgeForm_confirm container"
                                     disabled hidden>
-                            <label class="label">
-                                Enter your pledge
-                                <input type="number" min="25" value="25"
-                                        name="pledge-amount" required>
-                            </label>
+                            <div>
+                                <label for="pledgeAmount">Enter your pledge</label>
+                                <input id="pledgeAmount" name="pledge_amount"
+                                       type="number" min="25" value="25" required>
+                            </div>
                             <button class="button button-accent"
                                     type="submit">
                                 Continue
@@ -300,7 +305,8 @@
                                     member list. Shipping is included.
                                 </span>
                                 <span class="pledge_rewards">
-                                    <span class="copy_display">64</span>
+                                    <span class="copy_display"
+                                          data-value="rewards_left">64</span>
                                     <span class="copy_paragraph"> left</span>
                                 </span>
                             </label>
@@ -308,11 +314,11 @@
                         <hr class="separator">
                         <fieldset class="pledgeForm_confirm container"
                                     disabled hidden>
-                            <label>
-                                Enter your pledge
-                                <input type="number" min="75" value="75"
-                                        name="pledge-amount" required>
-                            </label>
+                            <div>
+                                <label for="pledgeAmount">Enter your pledge</label>
+                                <input id="pledgeAmount" name="pledge_amount"
+                                       type="number" min="75" value="75" required>
+                            </div>
                             <button class="button button-accent"
                                     type="submit">
                                 Continue
@@ -340,7 +346,8 @@
                                     to our Backer member list. Shipping is included.
                                 </span>
                                 <span class="pledge_rewards">
-                                    <span class="copy_display">0</span>
+                                    <span class="copy_display"
+                                          data-value="rewards_left">0</span>
                                     <span class="copy_paragraph"> left</span>
                                 </span>
                             </label>
@@ -348,11 +355,11 @@
                         <hr class="separator">
                         <fieldset class="pledgeForm_confirm container"
                                     disabled hidden>
-                            <label>
-                                Enter your pledge
-                                <input type="number" min="200" value="200"
-                                        name="pledge-amount" required>
-                            </label>
+                            <div>
+                                <label for="pledgeAmount">Enter your pledge</label>
+                                <input id="pledgeAmount" name="pledge_amount"
+                                       type="number" min="200" value="200" required>
+                            </div>
                             <button class="button button-accent"
                                     type="submit">
                                 Continue
@@ -363,7 +370,7 @@
             </div>
         </article>
     </dialog>
-    <dialog class="modal">
+    <dialog class="modal" id="confirmationModal">
         <article class="container container-alignCenter">
             <img src="./assets/images/icon-check.svg"
                     class="image" alt="">
@@ -373,10 +380,11 @@
                     Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get 
                     an email once our campaign is completed.
                 </p>
+                <button class="button button-accent"
+                        data-action="closeModal">
+                    Got it!
+                </button>
             </div>
-            <button class="button button-accent">
-                Got it!
-            </button>
         </article>
     </dialog> 
 </body>
